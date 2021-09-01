@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.axiatadigitallabs'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'App'
+        )
+    }
+}
+
+dependencies {
+    implementation 'com.axiatadigitallabs.axi:axi:1.0-SNAPSHOT'
+    testCompileOnly group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+
+}
